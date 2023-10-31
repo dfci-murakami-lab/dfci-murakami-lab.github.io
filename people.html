@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> People </title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="icon" type="image/x-icon" href="/images/dfcicircle.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/5c67de5804.js" crossorigin="anonymous"></script>
+  </head>
+
+<style>
+.jumbotron {
+  background-color: #00629B; /* DFCI Blue 1 */
+  color: #ffffff;
+Padding: 70px 25px;
+}
+
+
+.responsive-cell-block {
+  min-height: 75px;
+}
+
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: space-evenly;
+}
+
+.team-head-text {
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.team-head-text {
+  line-height: 50px;
+  width: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+}
+
+.container {
+  max-width: 1380px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding: 0px 0px;  
+}
+
+.card {
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+
+.card-container {
+  width: 280px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+.card-container-mod {
+  width: 500px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.position {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.feature-text {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: rgb(122, 122, 122);
+  line-height: 15px;
+}
+
+.social-icons {
+  width: 100px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.team-image-wrapper {
+  clip-path: circle(50% at 50% 50%);
+  width: 130px;
+  height: 130px;
+}
+
+.team-image-wrapper-new {
+  clip-path: circle(50% at 50% 50%);
+  width: 200px;
+  height: 200px;
+}
+
+.team-member-image {
+  max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  .card-container {
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+  }
+}
+
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.collapsible {
+  background-color: #00629B;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 75%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #00729B;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  width: 75%;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #00629B;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 1px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #00629B !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 70px 70px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+}
+
+.container-fluid {
+  padding: 60px 60px;
+}
+
+</style>
+
+<body>
+  
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Murakami Lab</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="purpose.html">PURPOSE</a></li>
+        <li><a href="people.html">PEOPLE</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+  
+  <div class="jumbotron text-center">
+  <h1>People</h1>
+  <p>Murakami Lab</p>
+</div>
+
+
+<div class="container-fluid">
+<div class="responsive-container-block container">
+
+  <div class="responsive-container-block">
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/MurakamiNEW.jpg">
+        </div>
+
+
+        <p class="text-blk name"><a href="./Bios/MarkMurakami.html">
+          Mark A. Murakami
+        </a></p>
+        <p class="text-blk position">
+          Principal Investigator
+        </p>
+
+
+        <div class="social-icons">
+          <a href="https://scholar.google.com/citations?user=Hmk0wwsAAAAJ&hl=en" target="_blank">
+            <i class="fa fa-solid fa-graduation-cap" style="color: #00629B;"></i>
+          </a>
+          <a href="https://www.researchgate.net/profile/Mark-Murakami" target="_blank">
+            <i class="fa fa-sharp fa-solid fa-file-lines" style="color: #00629B;"></i>
+          </a>                                       
+          <a href="https://www.linkedin.com/in/mark-murakami-a8550a178" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a>
+                
+        </div>
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/Antel.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/KatherineAntel.html">
+          Katherine Antel
+        </a></p>
+        <p class="text-blk position">
+           Scientific Researcher
+        </p>
+        <div class="social-icons">
+          <a href="https://scholar.google.com/citations?user=D2khFdMAAAAJ&hl=en&oi=ao" target="_blank">
+            <i class="fa-solid fa-graduation-cap" style="color: #00629B;"></i>
+          </a>
+          <a href="https://www.ncbi.nlm.nih.gov/myncbi/katherine.antel.1/bibliography/public/" target="_blank">
+            <i class="fa-sharp fa-solid fa-file-lines" style="color: #00629B;"></i>
+          </a>                        
+          <a href="https://za.linkedin.com/in/katherine-antel-78486a9" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <a href="./Bios/MingzengZhang.html"><img class="team-member-image" src="images/ZhangNEW2.jpg"></a>
+        </div>
+        <p class="text-blk name"><a href="./Bios/MingzengZhang.html">
+          Mingzeng Zhang
+        </a></p>
+        <p class="text-blk position">
+          Research Fellow
+        </p>
+        <div class="social-icons">
+          <a href="https://scholar.google.com/citations?user=UHj9PPgAAAAJ" target="_blank">
+            <i class="fa-solid fa-graduation-cap" style="color: #00629B;"></i>
+          </a>
+          <a href="https://www.ncbi.nlm.nih.gov/myncbi/zhang.mingzeng.1/bibliography/public/" target="_blank">
+            <i class="fa-sharp fa-solid fa-file-lines" style="color: #00629B;"></i>
+          </a>          
+          <a href="https://www.linkedin.com/in/zhang-mingzeng-a19925220" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a>
+          <a href="https://twitter.com/MingzengZhang?s=20" target="_blank">
+            <i class="fa-brands fa-twitter" style="color: #00629B;"></i>
+          </a>                           
+        </div>
+      </div>
+    </div>    
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <a href="./Bios/LydieDebaize.html"><img class="team-member-image" src="images/DebaizeNEW.jpg"></a>
+        </div>
+        <p class="text-blk name"><a href="./Bios/LydieDebaize.html">
+          Lydie Debaize
+        </a></p>
+        <p class="text-blk position">
+          Postdoctoral Research Fellow
+        </p>
+        <div class="social-icons">
+          <a href="https://scholar.google.com/citations?user=FwThh00AAAAJ&hl=en&oi=ao" target="_blank">
+            <i class="fa-solid fa-graduation-cap" style="color: #00629B;"></i>
+          </a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Lydie+Debaize&sort=date" target="_blank">
+            <i class="fa-sharp fa-solid fa-file-lines" style="color: #00629B;"></i>
+          </a>                    
+        </div>
+      </div>
+    </div>
+
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/McGrathNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/LaurenMcGrath.html">
+          Lauren R. McGrath
+        </a></p>
+        <p class="text-blk position">
+          Research Technician
+        </p>
+        <div class="social-icons">     
+          <a href="https://www.linkedin.com/in/lmcgrath213?trk=people-guest_people_search-card" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a> 
+        </div>
+      </div>
+    </div>
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/WeizerNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/ChaseWeizer.html">
+          Chase Weizer
+        </a></p>
+        <p class="text-blk position">
+          Research Technician
+        </p>
+        <div class="social-icons">     
+          <a href="https://www.linkedin.com/in/chase-weizer-7380a9197" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a> 
+        </div>
+      </div>
+    </div>  
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/WeekesNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/JenalynWeekes.html">
+          Jenalyn Weekes
+        </a></p>
+        <p class="text-blk position">
+          Joint Research Technician
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/j-weekes" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a>
+
+        </div>
+      </div>
+    </div>  
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/WuNEW.JPG">
+        </div>
+        <p class="text-blk name"><a href="./Bios/Meng-XuanClaireWu.html">
+          Meng-Xuan (Claire) Wu
+        </a></p>
+        <p class="text-blk position">
+          Data Scientist
+        </p>
+        <div class="social-icons">     
+        </div>
+      </div>
+    </div>      
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/XiongNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/NinaXiong.html">
+          Nina Xiong
+        </a></p>
+        <p class="text-blk position">
+          Bioinformatics Analyst
+        </p>
+        <div class="social-icons">
+          <a href="https://github.com/ninaxiong11?tab=repositories" target="_blank">
+            <i class="fa-brands fa-github" style="color: #00629B;"></i>
+          </a>          
+          <a href="https://www.linkedin.com/in/nina-xiong-38a809132" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a> 
+        </div>
+      </div>
+    </div>
+
+
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/XuNEW.png">
+        </div>
+        <p class="text-blk name"><a href="./Bios/SongtaoXu.html">
+          Songtao Xu
+        </a></p>
+        <p class="text-blk position">
+          Bioinformatics Analyst
+        </p>
+        <div class="social-icons">                
+          <a href="https://github.com/sxu1600?tab=repositories" target="_blank">
+            <i class="fa-brands fa-github" style="color: #00629B;"></i>
+          </a>            
+          <a href="https://www.linkedin.com/in/songtao-xu-953b1a206" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a> 
+        </div>
+      </div>
+    </div>    
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/BlennauNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/MiaBlennau.html">
+          Mia Blennau
+        </a></p>
+        <p class="text-blk position">
+          Program Scholar
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/mia-blennau-6417b0202" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/totoro.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/MedjinaOscar.html">
+          Medjina Oscar
+        </a></p>
+        <p class="text-blk position">
+          Program Scholar
+        </p>
+        <div class="social-icons">     
+          <a href="" target="_blank">
+            <i></i>
+          </a> 
+        </div>
+      </div>
+    </div>
+
+            <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/HugginsRiveraNEW2.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/WilmerHugginsRivera.html">
+          Wilmer Huggins Rivera
+        </a></p>
+        <p class="text-blk position">
+          Summer Research Intern
+        </p>
+        <div class="social-icons">     
+          <a href="https://www.linkedin.com/in/wilmer-huggins-rivera" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a> 
+        </div>
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/DroesslerNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/ClaraDroessler.html">
+          Clara Droessler
+        </a></p>
+        <p class="text-blk position">
+          Summer Research Intern
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/clara-droessler-756776203" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/DumontNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/GioDumont.html">
+          Galileo (Gio) Dumont
+        </a></p>
+        <p class="text-blk position">
+          Summer Research Intern
+        </p>
+        <div class="social-icons">     
+
+        </div>
+      </div>
+    </div>
+
+
+
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/JaeckleNEW.jpeg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/StellaJaeckle.html">
+          Stella Jaeckle
+        </a></p>
+        <p class="text-blk position">
+          Data Visualization Intern
+        </p>
+        <div class="social-icons">     
+          <a href="https://www.linkedin.com/in/stella-jaeckle-a29057262" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
+          </a> 
+        </div>
+      </div>
+    </div>
+
+        <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/McBrideNEW.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/LiamMcBride.html">
+        Liam McBride
+        </a></p>
+        <p class="text-blk position">
+          Bioinformatics Summer Intern
+        </p>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <h3 style="text-align:center;">Lab Alumni</h3>
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3" style="text-align:center;font-size:18px;color:#4678B2">
+<p><strong>Nezha Senhaji, PhD</strong></p>
+<p><strong>Ken Wang, BA</strong></p>
+<p><strong>Taylor Shishido, MS</strong></p>
+<p><strong>Ella Hagopian, BA</strong></p>
+  </div>
+  <div class="col-sm-3" style="text-align:center;font-size:18px;color:#4678B2">
+<p><strong>Hyun Hwan (Phillip) An, BA</strong></p>
+<p><strong>Iya Abdulkarim, MA</strong></p>
+<p><strong>Danny Barry, BA</strong></p>
+<p><strong>Jenna Richter, BA</strong></p>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+
+</div>
+
+
+<!-- pending getting this info
+<div class="container-fluid">
+  <h3>Collaborators</h3>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+</div>
+-->
+
+<footer class="container-fluid text-center">
+  <a href="people.html" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+
+<div class="text-center">
+  <button class="btn btn-default btn-lg;" onclick = "window.location.href='/index.html';">Home</button>
+</div>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+  </script>
+</body>
+
+
+</html>
