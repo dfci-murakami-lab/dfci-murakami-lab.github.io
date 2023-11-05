@@ -232,6 +232,43 @@ img {vertical-align: middle;}
   padding: 60px 60px;
 }
 
+footer {
+  text-align: left;
+  padding: 50px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 25%;
+  padding: 30px;
+}
+
+.columnnew {
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.vl {
+  border-left: 3px solid black;
+  position: static;
+  height: 170px;
+  left: 10%;
+  top: 3;
+}
+
 </style>
 
 <body>
@@ -244,13 +281,14 @@ img {vertical-align: middle;}
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.html">Murakami Lab</a>
+      <a class="navbar-brand" href="index.html">The Murakami Lab</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="purpose.html">PURPOSE</a></li>
-        <li><a href="people.html">PEOPLE</a></li>
+    <!--    <li><a href="purpose.html">PURPOSE</a></li> -->
         <li><a href="research.html">RESEARCH</a></li>
+        <li><a href="people.html">PEOPLE</a></li>
+        <li><a href="publications.html">PUBLICATIONS</a></li>
         <li><a href="contact.html">CONTACT</a></li>
         <li><a href="support.html">SUPPORT</a></li>
       </ul>
@@ -260,7 +298,7 @@ img {vertical-align: middle;}
   
   <div class="jumbotron text-center">
   <h1>People</h1>
-  <p>Murakami Lab</p>
+  
 </div>
 
 
@@ -595,6 +633,21 @@ img {vertical-align: middle;}
         </p>
       </div>
     </div>
+    
+    
+       <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+      <div class="card">
+        <div class="team-image-wrapper">
+          <img class="team-member-image" src="images/mwanasha.jpg">
+        </div>
+        <p class="text-blk name"><a href="./Bios/MwanashaMerrill.html">
+        Mwanasha Merrill
+        </a></p>
+        <p class="text-blk position">
+          Hematology-Oncology Fellow
+        </p>
+      </div>
+    </div>
 
 
 
@@ -644,10 +697,6 @@ img {vertical-align: middle;}
 </footer>
 
 
-<div class="text-center">
-  <button class="btn btn-default btn-lg;" onclick = "window.location.href='/index.html';">Home</button>
-</div>
-
 <script>
   var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -664,6 +713,29 @@ for (i = 0; i < coll.length; i++) {
   });
 }
   </script>
+  
+  
+<footer class="container">
+ <hr>
+<div class="row">
+ <div class="column">
+  <h3>The Murakami Lab</h3>
+   <p  style= "font-size:16px">Dana-Farber Cancer Institute<br>
+   450 Brookline Ave<br>
+   Boston, MA 02215</p>
+    </div>
+  <div class="vl"></div>
+
+  <div class="column" style="text-align: bottom right">
+    <img src="images/dfcilogo.jpg" style="width:250px">
+  </div>
+
+  <div class="column" style="text-align: bottom left">
+    <img src="images/hmslogo.jpg" style="width:250px">
+  </div>
+</div>
+
+</footer> 
 </body>
 
 

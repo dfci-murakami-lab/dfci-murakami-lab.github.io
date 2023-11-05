@@ -1,8 +1,8 @@
-   <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Lydie Debaize</title>
+    <title>Research</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <link rel="icon" type="image/x-icon" href="/images/dfcicircle.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -17,6 +17,78 @@
 Padding: 70px 25px;
 }
 
+.container-fluid {
+  padding: 20px 40px;
+  padding-right: 15%; 
+  Padding-left: 15%; 
+}
+
+footer {
+  text-align: left;
+  padding: 50px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 25%;
+  padding: 30px;
+}
+
+.columnnew {
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.vl {
+  border-left: 3px solid black;
+  position: static;
+  height: 170px;
+  left: 10%;
+  top: 3;
+}
+
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #00629B;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 1px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #00629B !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+}
 
 .responsive-cell-block {
   min-height: 75px;
@@ -65,9 +137,10 @@ Padding: 70px 25px;
   margin-bottom: 0px;
   margin-left: auto;
   padding-top: 0px;
-  padding-right: 30px;
+  padding-right: 0px;
   padding-bottom: 0px;
-  padding-left: 30px;
+  padding-left: 0px;
+  padding: 0px 0px;  
 }
 
 .card {
@@ -84,6 +157,14 @@ Padding: 70px 25px;
 
 .card-container {
   width: 280px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+.card-container-mod {
+  width: 500px;
   margin-top: 0px;
   margin-right: 10px;
   margin-bottom: 25px;
@@ -117,6 +198,7 @@ Padding: 70px 25px;
 
 .social-icons {
   width: 100px;
+  margin-top: 15px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -129,14 +211,13 @@ Padding: 70px 25px;
 
 .team-image-wrapper-new {
   clip-path: circle(50% at 50% 50%);
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .team-member-image {
   max-width: 100%;
 }
-
 
 @media (max-width: 500px) {
   .card-container {
@@ -152,131 +233,10 @@ Padding: 70px 25px;
 .mySlides {display: none}
 img {vertical-align: middle;}
 
-@media screen and (max-width: 768px) {
-  .col-sm-4 {
-    text-align: center;
-    margin: 25px 0;
-  }
-}
-
-.logo {
-  font-size: 200px;
-}
-
-  .container-fluid {
-    padding: 60px 50px;
-  }
-  .bg-grey {
-    background-color: #f6f6f6;
-  }
-
-  .collapsible {
-  background-color: #00629B;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 15px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 20px;
-      margin-top: 25px;
-    margin-right: 25px;
-    margin-bottom: 15px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
-  background-color: #;
-}
-
-/* Style the collapsible content. Note: hidden by default */
-
-.content {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-* {box-sizing:border-box}
-div.gallery {
-  border: 1px solid #ccc;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-}
-
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.navbar {
-  margin-bottom: 0;
-  background-color: #00629B;
-  z-index: 9999;
-  border: 0;
-  font-size: 12px !important;
-  line-height: 1.42857143 !important;
-  letter-spacing: 1px;
-  border-radius: 0;
-}
-
-.navbar li a, .navbar .navbar-brand {
-  color: #fff !important;
-}
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-  color: #00629B !important;
-  background-color: #fff !important;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-  color: #fff !important;
-}
-
 </style>
 
 <body>
-  
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -285,121 +245,45 @@ div.desc {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/index.html">Murakami Lab</a>
+      <a class="navbar-brand" href="index.html">The Murakami Lab</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/purpose.html">PURPOSE</a></li>
-        <li><a href="/people.html">PEOPLE</a></li>
-        <li><a href="/research.html">RESEARCH</a></li>
-        <li><a href="/contact.html">CONTACT</a></li>
+    <!--    <li><a href="purpose.html">PURPOSE</a></li> -->
+        <li><a href="research.html">RESEARCH</a></li>
+        <li><a href="people.html">PEOPLE</a></li>
+        <li><a href="publications.html">PUBLICATIONS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="support.html">SUPPORT</a></li>
       </ul>
     </div>
   </div>
-</nav> 
+</nav>
 
 
-  
   <div class="jumbotron text-center">
-  <h1>People</h1>
-  <p>Murakami Lab</p>
-</div>
-
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-        <div class="team-image-wrapper-new">
-          <img class="team-member-image" src="/images/DebaizeNEW.jpg">
-        </div>
-     </div>   
-
-
-    <div class="col-sm-8">
-      <h2><strong>Lydie Debaize, PhD</strong></h2>
-
-      <p style="font-size:20px"><strong>Postdoctoral Research Fellow, </strong>2022-Present</p> 
-        <div class="social-icons">
-          <a href="https://scholar.google.com/citations?user=FwThh00AAAAJ&hl=en&oi=ao" target="_blank">
-            <i class="fa-solid fa-graduation-cap" style="color: #00629B;"></i>
-          </a>   
-          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Lydie+Debaize&sort=date" target="_blank">
-            <i class="fa-sharp fa-solid fa-file-lines" style="color: #00629B;"></i>
-          </a>                 
-        </div>
-
-      <h4>Dr. Lydie Debaize is a postdoctoral fellow who seeks to address the hypothesis that direct targeting of vulnerabilities within minimal residual disease (MRD) can cure mantle cell lymphoma in complete remission. She defines biologic dynamics within MRD by interrogating the biophysical properties of residual lymphoma cells isolated from patients and preclinical models and relating these functional properties to drug sensitivity and underlying gene expression programs. Outside of the lab, Dr. Debaize enjoys traveling and spending time with my family and friends. She can be contacted at <a href = "mailto: lydie_debaize@dfci.harvard.edu">Lydie_Debaize@dfci.harvard.edu</a>.</h4>
-
-
-
-            <button class="collapsible">Projects</button>
-          <div class="content">
-            <h4>Targeting the Persister States in B-cell lymphomas</h4>
-            <p>My research focuses on the specific targeting of drug-tolerant persister cancer cells in B-cell non-Hodgkin lymphomas. We aim to identify their vulnerabilities, reveal fundamental mechanisms of drug resistance and tumor persistence and accelerate biomarker and drug discovery. I define biologic dynamics within minimal residual disease (MRD) by interrogating the biophysical properties of residual lymphoma cells isolated from patients and preclinical models and relating these functional properties to drug sensitivity and underlying gene expression programs.</p> 
-           </div>
-        <button class="collapsible">Grants</button>
-          <div class="content">
-            <ul style=“list-style-type:square”>
-            <li>Oliver W. Press Memorial Postdoctoral Fellowship Grant from the Lymphoma Research Foundation (2020-2022)</li>
-              <li>Postdoctoral Fellowship in Drug Discovery from the Pharmaceutical Research and Manufacturers of America Foundation (PhRMA Foundation)(2023-2025)</li>  
-            </ul>      
-          </div>
-        <button class="collapsible">Publications</button>
-        <div class="content">
-          <p id="demo"></p>
-
-
-        </div>    
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="/images/Debaize1.jpg">
-      <img src="/images/Debaize1.jpg" width="600" height="400">
-    </a>
-    <div class="desc">Dr. Debaize at the 2022 American Society of Hematology Meeting</div>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="/images/Debaize2.jpg">
-      <img src="/images/Debaize2.jpg" width="600" height="400">
-    </a>
-    <div class="desc">Dr. Debaize presenting at the American Society of Hematology Meeting</div>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="/images/Debaize3.jpg">
-      <img src="/images/Debaize3.jpg" width="1478" height="1107">
-    </a>
-    <div class="desc">Dr. Debaize presenting at the 2023 European Hematology Association (EHA) Meeting</div>
-  </div>
+  <h1>Publications</h1> 
 </div>
 
 
+<div class="container">
+<!-- <div class="container bg-grey"> -->
+ <h3 style="text-align:justify;color:#00629B"><strong>Selected Publications</strong></h3>
+ <p id="demo"></p>
+</div>          
 </div>
+
+<footer class="container text-center">
+  <a href="research.html" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
 
 <div class="text-center">
-  <button class="btn btn-default btn-lg;" onclick = "window.location.href='/index.html';">Home</button>
+  <button class="btn btn-default btn-lg;" onclick = "window.location.href='index.html';">Home</button>
 </div>
 
 <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-
 //From "http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api" adapted from reply to blog post by Les Ansley
 
 var HTMLpublication = '%authors% (%date%) \'%title%\' <i>%journal%\</i>,<b>%volume%</b> %issue%%pages%PMID:<a href="%data%"target="_blank"> %PMID% </a></br></br>' //Formats output
@@ -409,8 +293,8 @@ var pubmedSearchAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcg
 var pubmedSummaryAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?";
 var database = "db=pubmed";
 var returnmode = "&retmode=json";
-var returnmax = "&retmax=100";//maximum number of references returned
-var searchterm = "&term=Lydie Debaize[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
+var returnmax = "&retmax=10000";//maximum number of references returned
+var searchterm = "&term=Mark A Murakami[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
 var returntype = "&rettype=abstract";
 var idURL = pubmedSearchAPI + database + returnmode + returnmax + searchterm
 console.log(idURL);
@@ -486,10 +370,29 @@ function formatReferences(summary) {
     return (publicationList);
 } 
 
-
-
 </script>
 
+<footer class="container">
+ <hr>
+<div class="row">
+ <div class="column">
+  <h3>The Murakami Lab</h3>
+   <p  style= "font-size:16px">Dana-Farber Cancer Institute<br>
+   450 Brookline Ave<br>
+   Boston, MA 02215</p>
+    </div>
+  <div class="vl"></div>
+
+  <div class="column" style="text-align: bottom right">
+    <img src="images/dfcilogo.jpg" style="width:250px">
+  </div>
+
+  <div class="column" style="text-align: bottom left">
+    <img src="images/hmslogo.jpg" style="width:250px">
+  </div>
+</div>
+
+</footer> 
 </body>
 
 
