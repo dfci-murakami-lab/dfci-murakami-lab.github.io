@@ -77,11 +77,16 @@ Padding: 70px 25px;
   color: #00629B;
 }
 
+footer {
+  text-align: left;
+  padding: 50px;
+}
+
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  width: 50%;
-  padding: 50px;
+  width: 25%;
+  padding: 30px;
 }
 
 .columnnew {
@@ -101,6 +106,14 @@ Padding: 70px 25px;
   display: table;
 }
 
+.vl {
+  border-left: 3px solid black;
+  position: static;
+  height: 170px;
+  left: 10%;
+  top: 3;
+}
+
 </style>
 
 <body>
@@ -113,13 +126,14 @@ Padding: 70px 25px;
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.html">Murakami Lab</a>
+      <a class="navbar-brand" href="index.html">The Murakami Lab</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="purpose.html">PURPOSE</a></li>
-        <li><a href="people.html">PEOPLE</a></li>
+      <!--  <li><a href="purpose.html">PURPOSE</a></li> -->
         <li><a href="research.html">RESEARCH</a></li>
+        <li><a href="people.html">PEOPLE</a></li>
+        <li><a href="publications.html">PUBLICATIONS</a></li>
         <li><a href="contact.html">CONTACT</a></li>
         <li><a href="support.html">SUPPORT</a></li>
       </ul>
@@ -129,26 +143,45 @@ Padding: 70px 25px;
   
   <div class="jumbotron text-center">
   <h1>Support</h1>
-  <p>Murakami Lab</p>
 </div>
 
 <div class="container-fluid">
-<p style="text-align:center;font-size:20px;"><strong>Thank you to our generous donors who make our ongoing work possible. The impact of your philanthropy is far-reaching, and your commitment to supporting our research makes a significant difference. </p>
+<p style="text-align:left;font-size:23px;"><strong>We would like to thank our sponsors for supporting our research:</p>
+<br>
+ <li style = "font-size:16px">American Society of Hematology</li>
+ <li style = "font-size:16px">American Association for Cancer Research (AACR)</li>
+ <li style = "font-size:16px">American Cancer Society</li>
+ <li style = "font-size:16px">Conquer Cancer, the ASCO Foundation</li>
+ <li style = "font-size:16px">Dana-Farber Cancer Institute donors</li>
+ <li style = "font-size:16px">Koch Institute</li>
+ <li style = "font-size:16px">National Cancer Institute</li>
+ <li style = "font-size:16px">The Frederick A. DeLuca Foundation</li>
+ <li style = "font-size:16px">The imCORE Network (Genentech/Roche)</li>
+
 </div>
+
+
+<footer class="container">
+ <hr>
 <div class="row">
-  <div class="column" style="text-align:right">
-    <img src="images/dfcilogo.jpg" style="width:200px">
+ <div class="column">
+  <h3>The Murakami Lab</h3>
+   <p  style= "font-size:16px">Dana-Farber Cancer Institute<br>
+   450 Brookline Ave<br>
+   Boston, MA 02215</p>
+    </div>
+  <div class="vl"></div>
+
+  <div class="column" style="text-align: bottom right">
+    <img src="images/dfcilogo.jpg" style="width:250px">
   </div>
-  <div class="column" style="text-align:left">
-    <img src="images/hmslogo.jpg" style="width:200px">
+
+  <div class="column" style="text-align: bottom left">
+    <img src="images/hmslogo.jpg" style="width:250px">
   </div>
 </div>
 
-
-
-<div class="text-center">
-  <button class="btn btn-default btn-lg;" onclick = "window.location.href='index.html';">Home</button>
-</div>
+</footer> 
 
 
 </body>
