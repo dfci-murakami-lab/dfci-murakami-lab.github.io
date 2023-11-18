@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Mark Murakami</title>
+    <title>Alexa Batingana</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <link rel="icon" type="image/x-icon" href="/images/dfcicircle.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,7 +16,6 @@
   color: #ffffff;
 Padding: 70px 25px;
 }
-
 
 
 .responsive-cell-block {
@@ -61,9 +60,9 @@ Padding: 70px 25px;
 
 .container {
   max-width: 1380px;
-  margin-top: 0px;
+  margin-top: 00px;
   margin-right: auto;
-  margin-bottom: 0px;
+  margin-bottom: 00px;
   margin-left: auto;
   padding-top: 0px;
   padding-right: 30px;
@@ -119,7 +118,7 @@ Padding: 70px 25px;
 .social-icons {
   width: 100px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
 }
 
 .team-image-wrapper {
@@ -251,70 +250,51 @@ img {vertical-align: middle;}
     </div>
   </div>
 </nav> 
-
-
-
+  
   <div class="jumbotron text-center">
   <h1>People</h1>
+  <p>Murakami Lab</p>
 </div>
 
 <div class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-4">
         <div class="team-image-wrapper-new">
-          <img class="team-member-image" src="/images/MurakamiNEW.jpg">
+          <img class="team-member-image" src="/images/silhouette_head.jpg">
         </div>
-     </div>   
+     </div>  
+      
 
 
     <div class="col-sm-8">
-      <h2><strong>Mark A. Murakami, MD
+      <h2><strong>Alexa Batingana, BS
 
 </strong></h2>
-      <p style="font-size:20px"><strong>Principal Investigator</strong></p>
-        <div class="social-icons">
-          <a href="https://scholar.google.com/citations?user=Hmk0wwsAAAAJ&hl=en" target="_blank">
-            <i class="fa-solid fa-graduation-cap" style="color: #00629B;"></i>
-          </a>
-          <a href="https://www.researchgate.net/profile/Mark-Murakami" target="_blank">
-            <i class="fa-sharp fa-solid fa-file-lines" style="color: #00629B;"></i>
-          </a>                                       
-          <a href="https://www.linkedin.com/in/mark-murakami-a8550a178" target="_blank">
+      <p style="font-size:20px"><strong>Research Technician, </strong>2023-Present</p> 
+      
+        <div class="social-icons">     
+          <a href="linkedin.com/in/alexabatingana" target="_blank">
             <i class="fa-brands fa-linkedin" style="color: #00629B;"></i>
           </a> 
         </div>
+      <h4>Alexa Batingana is a research technician. She earned her Bachelor of Science in Biochemistry. She can be contacted at <a href = "mailto: alexa_batingana@dfci.harvard.edu">alexa_batingana@dfci.harvard.edu</a>.</h4>
 
-      <h4>Dr. Murakami graduated from Washington University School of Medicine with an MD and MA in Biology and Biomedical Sciences in 2009. He trained in Internal Medicine at the Massachusetts General Hospital before pursuing subspecialty training in Hematology and Medical Oncology at the Dana-Farber/Partners CancerCare program. He earned his MMSc in Biomedical Informatics from Harvard Medical School in 2016. He has been an independent laboratory investigator in the Division of Hematologic Neoplasia at the Dana-Farber Cancer Institute since 2018. He devotes his clinical practice to patients with hematological malignancies, including leukemia and lymphoma and those undergoing hematopoietic stem cell transplantation. He contributes to early phase clinical trials through correlative science. He can be contacted at <a href = "mailto: mark_murakami@dfci.harvard.edu">mark_murakami@dfci.harvard.edu</a>.</h4>
-
-<!--
             <button class="collapsible">Projects</button>
           <div class="content">
-            <h4>cBioPortal for Cancer Genomics</h4>
-            <p></p>
-            <h4>Leukemia Analysis & Data Exploration Repository (LeADER)</h4>
-            <p>Multidisciplinary research groups face operational inefficiencies and data sharing bottlenecks when performing complex integrative analyses. LeADER bridges the data accessibility gap separating clinicians, bench scientists, bioinformaticians, and statisticians, thereby advancing translational medicine.</p>
-            <h4>PRoXe (Public Repository of Xenografts)</h4>
-            <p>PRoXe is an open-source website to disseminate information relevant to patient-derived xenografts (PDXs), particularly PDXs generated from patients with leukemia or lymphoma.</p>  
+ 
            </div>
--->
-
-        <button class="collapsible">Grants</button>
-          <div class="content">
-            <ul style=“list-style-type:square”>
-            <li>National Cancer Institute (NCI) K08 Award (2017-2022)</li>
-            </ul>      
-          </div>
-        <button class="collapsible">Publications</button>
-        <div class="content">
-          <p id="demo"></p>
-
-
-        </div>    
+ 
     
     </div>
   </div>
 </div>
 
+
+
+
+<div class="text-center">
+  <button class="btn btn-default btn-lg;" onclick = "window.location.href='/index.html';">Home</button>
+</div>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -342,7 +322,7 @@ var pubmedSummaryAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.f
 var database = "db=pubmed";
 var returnmode = "&retmode=json";
 var returnmax = "&retmax=100";//maximum number of references returned
-var searchterm = "&term=Mark A Murakami[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
+var searchterm = "&term=Katherine Antel[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
 var returntype = "&rettype=abstract";
 var idURL = pubmedSearchAPI + database + returnmode + returnmax + searchterm
 console.log(idURL);
@@ -423,4 +403,4 @@ function formatReferences(summary) {
 </body>
 
 
-</html>  
+</html>   
