@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Contact</title>
+    <title>Resources</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <link rel="icon" type="image/x-icon" href="/images/dfcicircle.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -52,30 +52,7 @@ Padding: 70px 25px;
   background-color: #f6f6f6;
 }
 
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-}
 
-.hero-text-button {
-  border: none;
-  outline: 0;
-  display: table;
-  padding: 10px 25px;
-  color: white;
-  background-color: #00629B;
-  text-align: center;
-  cursor: pointer;
-}
-
-.hero-text-button:hover {
-  background-color: #CCCCCC;
-  color: #00629B;
-}
 
 footer {
   text-align: left;
@@ -114,6 +91,44 @@ footer {
   top: 3;
 }
 
+.collapsible {
+  background-color: #eee;
+  color: #00004d;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 23px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 18px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
 </style>
 
 <body>
@@ -130,12 +145,10 @@ footer {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-     <!--   <li><a href="purpose.html">PURPOSE</a></li> -->
         <li><a href="research.html">RESEARCH</a></li>
         <li><a href="people.html">PEOPLE</a></li>
         <li><a href="publications.html">PUBLICATIONS</a></li>
         <li><a href="resources.html">RESOURCES</a></li>
-<!--        <li><a href="opportunities.html">OPPORTUNITIES</a></li> -->
         <li><a href="contact.html">CONTACT</a></li>
         <li><a href="support.html">SUPPORT</a></li>
       </ul>
@@ -144,23 +157,49 @@ footer {
 </nav>  
   
   <div class="jumbotron text-center">
-  <h1>Contact</h1>
-
+  <h1>Resources</h1>
 </div>
 
+<div class="container">
+ 
+<button class="collapsible">TLP - Product Data Sheet</button>
+<div class="content"> 
+  <iframe src= "20231120_TLP_PRODUCT_DATA_SHEET_DFCI.pdf"
+                width="900"
+                height="800"></iframe> 
+   </div>
+ </div>
 
+<script>
+ var coll = document.getElementsByClassName("collapsible");
+var i;
 
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+} 
+</script>
+<!--  <div class="container"> -->
+ <!--   <center> -->
+    <!--     <h1 style="color:#00004d">TLP - Product Data Sheet</h1> 
+        <br> -->
+     <!--   <object data= "20231120_TLP_PRODUCT_DATA_SHEET_DFCI.pdf" 
+                width="1000"
+                height="800"> -->
+     <!--       <iframe src= "20231120_TLP_PRODUCT_DATA_SHEET_DFCI.pdf"
+                width="900"
+                height="800"></iframe> 
+    <!--    </object> -->
+ <!--    </center> -->
+ <!-- </div> -->
 
-<div id="CONTACT" class="container bg-grey">
-  <h3 style="text-align:left;">Contact the Murakami Lab</h3>
-  <br>
-   <p style="text-align:left"> <b>Mark A. Murakami, MD</b>
-    <br>Dana-Farber Cancer Institute
-    <br>450 Brookline Ave, Mayer 542
-    <br>Boston, MA 02215 </p>
-    <p style="text-align:left"> <a href = "mailto: mark_murakami@dfci.harvard.edu">mark_murakami@dfci.harvard.edu</a></p>
-
-</div>
 
 <footer class="container">
  <hr>
@@ -183,6 +222,7 @@ footer {
 </div>
 
 </footer> 
+
 
 </body>
 
