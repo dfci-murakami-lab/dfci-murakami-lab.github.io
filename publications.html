@@ -289,7 +289,12 @@ img {vertical-align: middle;}
 <script>
 //From "http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api" adapted from reply to blog post by Les Ansley
 
-var HTMLpublication = '%authors% (%date%) \'%title%\' <i>%journal%\</i>,<b>%volume%</b> %issue%%pages%PMID:<a href="%data%"target="_blank"> %PMID% </a></br></br>' //Formats output
+//var HTMLpublication = '%authors% (%date%) \'%title%\' <i>%journal%\</i>,<b>%volume%</b> %issue%%pages%PMID:<a href="%data%"target="_blank"> %PMID% </a></br></br>' //Formats output
+
+
+//var HTMLpublication = '%authors% (%date%) <a href="%data%"target="_blank">\'%title%\'</a> <i>%journal%\</i>,<b>%volume%</b> %issue%%pages%PMID: %PMID%</br></br>' //Formats output
+
+var HTMLpublication = '<a href="%data%"target="_blank"> %title% </a> </br> %authors% (%date%)  <i>%journal%\</i>,%volume% %issue%%pages%PMID: %PMID%</br></br>' 
 
 var publications, idStringList;
 var pubmedSearchAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?";
@@ -297,7 +302,7 @@ var pubmedSummaryAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.f
 var database = "db=pubmed";
 var returnmode = "&retmode=json";
 var returnmax = "&retmax=10000";//maximum number of references returned
-var searchterm = "&term=Mark A Murakami[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
+var searchterm = "&term=Mark A. Murakami[Author]+OR+Mark Murakami[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
 var returntype = "&rettype=abstract";
 var idURL = pubmedSearchAPI + database + returnmode + returnmax + searchterm
 console.log(idURL);
