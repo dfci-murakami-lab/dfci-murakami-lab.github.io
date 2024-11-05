@@ -1,0 +1,340 @@
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lydie Debaize</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="icon" type="image/x-icon" href="/images/dfcicircle.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/5c67de5804.js" crossorigin="anonymous"></script>
+  </head>
+
+<style>
+.jumbotron {
+  background-color: #00629B; /* DFCI Blue 1 */
+  color: #ffffff;
+Padding: 70px 25px;
+}
+
+
+.responsive-cell-block {
+  min-height: 75px;
+}
+
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: space-evenly;
+}
+
+.team-head-text {
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.team-head-text {
+  line-height: 50px;
+  width: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+}
+
+.container {
+  max-width: 1380px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+}
+
+.card {
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+
+.card-container {
+  width: 280px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.position {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.feature-text {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: rgb(122, 122, 122);
+  line-height: 15px;
+}
+
+.social-icons {
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.team-image-wrapper {
+  clip-path: circle(50% at 50% 50%);
+  width: 130px;
+  height: 130px;
+}
+
+.team-image-wrapper-new {
+  clip-path: circle(50% at 50% 50%);
+  width: 250px;
+  height: 250px;
+}
+
+.team-member-image {
+  max-width: 100%;
+}
+
+
+@media (max-width: 500px) {
+  .card-container {
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+  }
+}
+
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+}
+
+.logo {
+  font-size: 200px;
+}
+
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+
+  .collapsible {
+  background-color: #00629B;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+      margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+* {box-sizing:border-box}
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #00629B;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 1px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #00629B !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+
+</style>
+
+<body>
+  
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/index.html">Murakami Lab</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/research.html">RESEARCH</a></li>
+        <li><a href="/people.html">PEOPLE</a></li>
+        <li><a href="/publications.html">PUBLICATIONS</a></li>
+<!--        <li><a href="resources.html">RESOURCES</a></li> -->
+<!--        <li><a href="opportunities.html">OPPORTUNITIES</a></li> -->
+        <li><a href="/contact.html">CONTACT</a></li>
+        <li><a href="/support.html">SUPPORT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+
+  
+  <div class="jumbotron text-center">
+  <h1>People</h1>
+  <p>Murakami Lab</p>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+        <div class="team-image-wrapper-new">
+          <img class="team-member-image" src="Bio_images/PoojaPatnaik.jpg">
+        </div>
+     </div>   
+
+
+    <div class="col-sm-8">
+      <h2><strong>Pooja Patnaik, MD</strong></h2>
+
+      <p style="font-size:20px"><strong>Neurology Resident Physician, </strong>2024-Present</p> 
+
+      <h5>
+       My research focuses on improving our ability to predict outcomes and guide personalized treatment for patients with central-nervous system lymphoma (CNSL) using cfDNA sequencing, also known as "liquid biopsy." I am specifically developing a targeted cfDNA sequencing assay to evaluate minimal residual disease and track immune dynamics in patients with relapsed/refractory CNSL receiving anti-CD19 chimeric antigen receptor T-cell (CART) therapy. My long-term goal is to apply this to larger cohorts to establish biomarkers of resistance to immunotherapy that could guide personized therapeutics as well as clinical trial design and implementation.
+<br><br>      
+Outside of Work: I am a faithful spin and BodyPump workout class attendee. I also love to cook Indian food and hammock on the Esplanade with my fiancé and two Shih-Tzu's Siri and Nani. 
+<br><br> 
+Dr. Patnaik can be contacted at <a href = "mailto: ppatnaik1@mgb.org">ppatnaik1@mgb.org</a>.</h5>
+
+</div>
+
+
+</script>
+
+</body>
+
+
+</html>
