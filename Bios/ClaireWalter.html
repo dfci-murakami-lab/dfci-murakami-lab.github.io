@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Claire Walter</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="icon" type="image/x-icon" href="/images/dfcicircle.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/5c67de5804.js" crossorigin="anonymous"></script>
+  </head>
+
+<style>
+.jumbotron {
+  background-color: #00629B; /* DFCI Blue 1 */
+  color: #ffffff;
+Padding: 70px 25px;
+}
+
+.responsive-cell-block {
+  min-height: 75px;
+}
+
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: space-evenly;
+}
+
+.team-head-text {
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.team-head-text {
+  line-height: 50px;
+  width: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+}
+
+.container {
+  max-width: 1380px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+}
+
+.card {
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+
+.card-container {
+  width: 280px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.position {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.feature-text {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: rgb(122, 122, 122);
+  line-height: 15px;
+}
+
+.social-icons {
+  width: 100px;
+  display: flex;
+  justify-content: left;
+}
+
+.team-image-wrapper {
+  clip-path: circle(50% at 50% 50%);
+  width: 130px;
+  height: 130px;
+}
+
+.team-image-wrapper-new {
+  clip-path: circle(50% at 50% 50%);
+  width: 250px;
+  height: 250px;
+}
+
+.team-member-image {
+  max-width: 100%;
+}
+
+
+@media (max-width: 500px) {
+  .card-container {
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+  }
+}
+
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+}
+
+.logo {
+  font-size: 200px;
+}
+
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+
+  .collapsible {
+  background-color: #00629B;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+      margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: #00629B;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 1px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #00629B !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+
+</style>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/index.html">Murakami Lab</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/research.html">RESEARCH</a></li>
+        <li><a href="/people.html">PEOPLE</a></li>
+        <li><a href="/publications.html">PUBLICATIONS</a></li>
+<!--        <li><a href="resources.html">RESOURCES</a></li> -->
+<!--        <li><a href="opportunities.html">OPPORTUNITIES</a></li> -->
+        <li><a href="/contact.html">CONTACT</a></li>
+        <li><a href="/support.html">SUPPORT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+  
+  <div class="jumbotron text-center">
+  <h1>People</h1>
+  <p>Murakami Lab</p>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+        <div class="team-image-wrapper-new">
+          <img class="team-member-image" src="Bio_images/ClaireWalter.jpg">
+        </div>
+     </div>   
+
+
+    <div class="col-sm-8">
+      <h2><strong>Claire Walter
+
+</strong></h2>
+      <p style="font-size:20px"><strong>Research Technician, </strong>June 2025 - Present</p> 
+       
+      <h4> Claire is working with Dr. Patnaik to develop new diagnostics and treatments for patients with central nervous system lymphoma (CNSL) using cell-free DNA (cfDNA) sequencing. The long-term goal of this work is to inform and support personalized therapy for treatment-resistant CNSL.
+        Outside of the lab, she enjoys knitting, film photography, and experimenting with new recipes. </h4>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="text-center">
+  <button class="btn btn-default btn-lg;" onclick = "window.location.href='/index.html';">Home</button>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+
+//From "http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api" adapted from reply to blog post by Les Ansley
+
+var HTMLpublication = '%authors% (%date%) \'%title%\' <i>%journal%\</i>,<b>%volume%</b> %issue%%pages%PMID:<a href="%data%"target="_blank"> %PMID% </a></br></br>' //Formats output
+
+var publications, idStringList;
+var pubmedSearchAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?";
+var pubmedSummaryAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?";
+var database = "db=pubmed";
+var returnmode = "&retmode=json";
+var returnmax = "&retmax=100";//maximum number of references returned
+var searchterm = "&term=Katherine Antel[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
+var returntype = "&rettype=abstract";
+var idURL = pubmedSearchAPI + database + returnmode + returnmax + searchterm
+console.log(idURL);
+
+var getPubmed = function(url) { //passed url
+    return new Promise(function(resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', url, true);
+        xhr.responseType = 'json';
+        xhr.onload = function() {
+            var status = xhr.status;
+            if (status == 200) { //status 200 signifies OK (http://www.w3schools.com/ajax/ajax_xmlhttprequest_onreadystatechange.asp)
+                resolve(xhr.response);
+            } else {
+                reject(status);
+            }
+        };
+        xhr.send();
+    });
+};
+getPubmed(idURL).then(function(data) {
+    var idList = data.esearchresult.idlist;
+    idStringList = idList.toString(); //converts the idlist to a string to be appended to the search url
+    idStringList = '&id=' + idStringList;
+    summaryURL = pubmedSummaryAPI + database + returnmode + returntype + idStringList;
+    getPubmed(summaryURL).then(function(summary) {
+        publications = formatReferences(summary);
+        console.log(publications);	
+		document.getElementById("demo").innerHTML = publications;
+		
+    }, function(status) {
+        publications = 'Something went wrong getting the ids.';
+    });
+}, function(status) {
+    publications = 'Something went wrong getting the ids.';
+});
+
+
+function formatReferences(summary) {
+    var publicationList = '';
+    for (refs in summary.result) {
+        if (refs !== 'uids') {
+            var authors = '';
+            var publication = '';
+            var authorCount = ((summary.result[refs].authors).length);
+            var i = 0;
+            while (i < authorCount - 1) {
+                authors += summary.result[refs].authors[i].name + ', ';
+                i++;
+            }
+            publication = HTMLpublication.replace('%data%', 'http://www.ncbi.nlm.nih.gov/pubmed/' + refs);
+            authors += summary.result[refs].lastauthor;
+            publication = publication.replace('%authors%', authors);
+            publication = publication.replace('%title%', summary.result[refs].title);
+            publication = publication.replace('%journal%', summary.result[refs].source);
+            publication = publication.replace('%PMID%', summary.result[refs].uid);
+            //Alter formatting if article is In Press
+            if (summary.result[refs].volume !== '') {
+                publication = publication.replace('%volume%', ' ' + summary.result[refs].volume);
+                publication = publication.replace('%issue%', '(' + summary.result[refs].issue + ')');
+                publication = publication.replace('%pages%', ': ' + summary.result[refs].pages + '. ');
+                var date = summary.result[refs].pubdate.slice(0, 4);
+                publication = publication.replace('%date%', date + '');
+            } else {
+                publication = publication.replace('%volume%', ' In Press');
+                publication = publication.replace('%issue%', '.');
+                publication = publication.replace('%pages%', '');
+                publication = publication.replace('%date%', '');
+            }
+            publicationList = publication + publicationList;
+        }
+    }
+    return (publicationList);
+} 
+
+</script>
+
+</body>
+
+
+</html>      
