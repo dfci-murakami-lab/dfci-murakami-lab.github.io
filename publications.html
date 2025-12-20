@@ -297,27 +297,73 @@ img {vertical-align: middle;}
 
 //var HTMLpublication = '%authors% (%date%) <a href="%data%"target="_blank">\'%title%\'</a> <i>%journal%\</i>,<b>%volume%</b> %issue%%pages%PMID: %PMID%</br></br>' //Formats output
 
-var HTMLpublication = '<a href="%data%"target="_blank"> %title% </a> </br> %authors% (%date%)  <i>%journal%\</i>,%volume% %issue%%pages%PMID: %PMID%</br></br>' 
+// 1. THE TEMPLATE
+var HTMLpublication = '<a href="%data%" target="_blank"> %title% </a> </br> %authors% (%date%) <i>%journal%</i>,%volume%%issue%%pages% </br></br>';
 
+// 2. MANUAL ENTRIES
+var manualPapers = [
+    {
+        title: "Molecular and functional determinants of response to venetoclax and inotuzumab ozogamicin in CD22-positive ALL [oral presentation abstract]",
+        authors: "Stella L. Jaeckle, Emma M. Smith, Jeremy Ryan, Chase M. Weizer, Matthew A. Booker, Ashreen Williams, Michael Y. Tolstorukov, Daniel J. DeAngelo, Marlise R. Luskin, Anthony Letai, Mark A. Murakami",
+        date: "2025",
+        journal: "Blood",
+        volume: "146",
+        issue: "Supplement 1",
+        pages: "329",
+        url: "https://doi.org/10.1182/blood-2025-329"
+    },
+    {
+        title: "Glofitamab and obinutuzumab (GLOBIN) as first-line therapy for patients with high-tumor burden follicular lymphoma: First results of a multicenter phase II trial",
+        authors: "Reid Merryman, Gottfried von Keudell, Robert Redd, Heather Walker, Jenna Mahns, Samantha Normilus, Siri Sagedahl, Ioulia Vogiatzi, Mingzeng Zhang, Emily Sumpena, Weihsin Chuan, Inhye Ahn, Amy Bessnow, Jennifer Brown, Jennifer Crombie, Matthew S Davids, David Fisher, Cynthia Hahn, Eric Jacobsen, Caron Jacobson, Austin Kim, Ann LaCasce, Oreofe Odejide, Erin Parry, David Qualls, Christine Ryan, Aswin Sekar, Hua-Jay Cherng, Mark Murakami, Philippe Armand, Joshua Brody",
+        date: "2025",
+        journal: "Blood",
+        volume: "146",
+        issue: "Supplement 1",
+        pages: "3602",
+        url: "https://doi.org/10.1182/blood-2025-3602"
+    },
+        {
+        title: "Rituximab and epcoritamab as first-line therapy for patients with high-tumor burden follicular lymphoma: Results of a multicenter phase II trial",
+        authors: "Reid Merryman, Danielle Wallace, Robert Redd, Heather Walker, Rafaella Tringale, Vanessa Kats, Siri Sagedahl, Ioulia Vogiatzi, Mingzeng Zhang, Emily Sumpena, Weihsin Chuan, Audrey Sigmund, Inhye Ahn, Amy Bessnow, Jennifer R. Brown, Jennifer Crombie, Matthew S Davids, David Fisher, Cynthia Hahn, Eric Jacobsen, Caron Jacobson, Austin Kim, Ann LaCasce, Oreofe Odejide, Erin Parry, David Qualls, Christine Ryan, Aswin Sekar, Sumana Devata, Carla Casulo, Kami Maddocks, Mark Murakami, Philippe Armand, Yazeed Sawalha",
+        date: "2025",
+        journal: "Blood",
+        volume: "146",
+        issue: "Supplement 1",
+        pages: "464",
+        url: "https://doi.org/10.1182/blood-2025-464"
+    },
+    {
+        title: "Baseline intratumoral CD4⁺ T-cell abundance and frequency correlates with durable clinical response to acalabrutinib, venetoclax, and obinutuzumab (AVO) treatment in Mantle Cell Lymphoma",
+        authors: "Mingzeng Zhang, Billie Porter, Kathleen Pfaff, Anne Carlisle, Grace Chen, Lydie Debaize, Salah Abdulkarim, Haocheng Wang, Juniper Mai, Alexa Batingana, Jenalyn Weekes, Paul Branch, Liliana Guerrero, Mikaela McDonough, Reid Merryman, Christine Ryan, Austin Kim, Scott Rodig, Mark Murakami",
+        date: "2025",
+        journal: "Blood",
+        volume: "146",
+        issue: "Supplement 1",
+        pages: "3551",
+        url: "https://doi.org/10.1182/blood-2025-3551"
+    }
+];
+
+// 3. PUBMED API CONFIGURATION
 var publications, idStringList;
 var pubmedSearchAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?";
 var pubmedSummaryAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?";
 var database = "db=pubmed";
 var returnmode = "&retmode=json";
-var returnmax = "&retmax=10000";//maximum number of references returned
-var searchterm = "&term=Mark A. Murakami[Author]+OR+Mark Murakami[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
+var returnmax = "&retmax=10000";
+var searchterm = "&term=Mark A. Murakami[Author]+OR+Mark Murakami[Author])";
 var returntype = "&rettype=abstract";
-var idURL = pubmedSearchAPI + database + returnmode + returnmax + searchterm
-console.log(idURL);
+var idURL = pubmedSearchAPI + database + returnmode + returnmax + searchterm;
 
-var getPubmed = function(url) { //passed url
+// 4. THE FETCH FUNCTION
+var getPubmed = function(url) {
     return new Promise(function(resolve, reject) {
         var xhr = new XMLHttpRequest();
         xhr.open('get', url, true);
         xhr.responseType = 'json';
         xhr.onload = function() {
             var status = xhr.status;
-            if (status == 200) { //status 200 signifies OK (http://www.w3schools.com/ajax/ajax_xmlhttprequest_onreadystatechange.asp)
+            if (status == 200) {
                 resolve(xhr.response);
             } else {
                 reject(status);
@@ -326,54 +372,39 @@ var getPubmed = function(url) { //passed url
         xhr.send();
     });
 };
-getPubmed(idURL).then(function(data) {
-    var idList = data.esearchresult.idlist;
-    idStringList = idList.toString(); //converts the idlist to a string to be appended to the search url
-    idStringList = '&id=' + idStringList;
-    summaryURL = pubmedSummaryAPI + database + returnmode + returntype + idStringList;
-    getPubmed(summaryURL).then(function(summary) {
-        publications = formatReferences(summary);
-        console.log(publications);	
-		document.getElementById("demo").innerHTML = publications;
-		
-    }, function(status) {
-        publications = 'Something went wrong getting the ids.';
-    });
-}, function(status) {
-    publications = 'Something went wrong getting the ids.';
-});
 
-
+// 5. THE FORMATTING LOGIC
 function formatReferences(summary) {
     var publicationList = '';
-    for (refs in summary.result) {
+    for (var refs in summary.result) {
         if (refs !== 'uids') {
             var authors = '';
-            var publication = '';
-            var authorCount = ((summary.result[refs].authors).length);
-            var i = 0;
-            while (i < authorCount - 1) {
-                authors += summary.result[refs].authors[i].name + ', ';
-                i++;
+            var entry = summary.result[refs];
+            var authorCount = entry.authors.length;
+            
+            // Build Author String
+            for (var i = 0; i < authorCount - 1; i++) {
+                authors += entry.authors[i].name + ', ';
             }
-            publication = HTMLpublication.replace('%data%', 'http://www.ncbi.nlm.nih.gov/pubmed/' + refs);
-            authors += summary.result[refs].lastauthor;
+            authors += entry.lastauthor;
+
+            // Start with template
+            var publication = HTMLpublication;
+            publication = publication.replace('%data%', 'https://www.ncbi.nlm.nih.gov/pubmed/' + refs);
             publication = publication.replace('%authors%', authors);
-            publication = publication.replace('%title%', summary.result[refs].title);
-            publication = publication.replace('%journal%', summary.result[refs].source);
-            publication = publication.replace('%PMID%', summary.result[refs].uid);
-            //Alter formatting if article is In Press
-            if (summary.result[refs].volume !== '') {
-                publication = publication.replace('%volume%', ' ' + summary.result[refs].volume);
-                //og code 
-                publication = publication.replace('%issue%', '(' + summary.result[refs].issue + ')');
-                // My failed attempt at removing empty ()s
-                //publication = publication.replace('%issue%', '' + summary.result[refs].issue + '');
-                publication = publication.replace('%pages%', ': ' + summary.result[refs].pages + '. ');
-                var date = summary.result[refs].pubdate.slice(0, 4);
-                publication = publication.replace('%date%', date + '');
+            publication = publication.replace('%title%', entry.title);
+            publication = publication.replace('%journal%', entry.source);
+            publication = publication.replace('%PMID%', entry.uid);
+
+            // Handle Volume, Issue, and Pages
+            if (entry.volume !== '') {
+                publication = publication.replace('%volume%', ' ' + entry.volume);
+                // Fix: Only add parentheses if issue exists
+                var issueStr = entry.issue ? '(' + entry.issue + ')' : '';
+                publication = publication.replace('%issue%', issueStr);
+                publication = publication.replace('%pages%', ': ' + entry.pages + '. ');
+                publication = publication.replace('%date%', entry.pubdate.slice(0, 4));
             } else {
-              //publication = publication.replace('%volume%', ' In Press'); 
                 publication = publication.replace('%volume%', ' [Preprint].');
                 publication = publication.replace('%issue%', '');
                 publication = publication.replace('%pages%', '');
@@ -382,8 +413,52 @@ function formatReferences(summary) {
             publicationList = publication + publicationList;
         }
     }
-    return (publicationList);
-} 
+    return publicationList;
+}
+
+// 6. MANUAL FORMATTER
+function formatManualEntries(dataArray) {
+    var htmlOut = '';
+    dataArray.forEach(function(item) {
+        var p = HTMLpublication;
+        p = p.replace('%data%', item.url || '#');
+        p = p.replace('%title%', item.title);
+        p = p.replace('%authors%', item.authors);
+        p = p.replace('%date%', item.date);
+        p = p.replace('%journal%', item.journal);
+        p = p.replace('%volume%', item.volume ? ' ' + item.volume : '');
+        p = p.replace('%issue%', item.issue ? '(' + item.issue + ')' : '');
+        p = p.replace('%pages%', item.pages ? ': ' + item.pages + '.' : '');
+        p = p.replace('%PMID%', item.pmid);
+        htmlOut += p;
+    });
+    return htmlOut;
+}
+
+// 7. EXECUTION
+getPubmed(idURL).then(function(data) {
+    var idList = data.esearchresult.idlist;
+    idStringList = '&id=' + idList.toString();
+    var summaryURL = pubmedSummaryAPI + database + returnmode + returntype + idStringList;
+
+    getPubmed(summaryURL).then(function(summary) {
+        // Get PubMed Results
+        var pubmedResults = formatReferences(summary);
+        
+        // Get Manual Results
+        var manualResults = formatManualEntries(manualPapers);
+
+        // Combine and display
+        // Note: manualResults first puts them at the top of the list
+        document.getElementById("demo").innerHTML = manualResults + pubmedResults;
+
+    }, function(status) {
+        document.getElementById("demo").innerHTML = 'Error loading publication details.';
+    });
+}, function(status) {
+    document.getElementById("demo").innerHTML = 'Error searching PubMed IDs.';
+});
+
 
 </script>
 
