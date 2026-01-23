@@ -274,6 +274,13 @@ img {vertical-align: middle;}
       <p style="font-size:20px"><strong>Research Technician, 
       </strong>2024-Present</p> 
       <h4>Emily holds a Bachelor of Arts in Molecular and Cell Biology and a minor in Data Science from UC Berkeley. She is excited to contribute her basic science and clinical research background to advancing correlative science efforts in the follicular lymphoma immunotherapy translational space. Currently, she is investigating immune profiles of peripheral blood and tissue from patients receiving bispecific antibody-based treatment. Her goal is to identify immunological signatures that are predictive of treatment-related toxicity and reduce immune-related adverse events in patients. Outside of lab, Emily enjoys taking film photography, playing badminton, and illustrating anime-inspired art with her ever-growing collection of Japanese stationeries.</h4>
+      
+              <button class="collapsible">Publications</button>
+        <div class="content">
+          <p id="demo"></p>
+
+          </div>
+          </div>
                       
         </div>
     </div>
@@ -303,6 +310,11 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+var manualAbstracts = "Sumpena E, Vogiatzi I, Patel A, Walker H, Mahns J, Redd R, Armand P, Merryman R, Murakami M. Immune population changes after glofitamab and obinutuzumab (GLOBIN) as first-line therapy for patients with follicular lymphoma and marginal zone lymphoma. Blood. 2025;146(Suppl 1):5344. doi:10.1182/blood-2025-5344.</br></br>";
+
+// You can add more by using += 
+manualAbstracts += "Vogiatzi I, Sumpena E, Patel A, Walker H, Tringale R, Redd R, Armand P, Merryman R, Murakami M. Immune cell dynamics following rituximab and epcoritamab as first-line therapy for patients with high-tumor burden follicular lymphoma. Blood. 2025;146(Suppl 1):1790. doi:10.1182/blood-2025-1790.</br></br>";
+
 //From "http://www.alexhadik.com/blog/2014/6/12/create-pubmed-citations-automatically-using-pubmed-api" adapted from reply to blog post by Les Ansley
 
 var HTMLpublication = '%authors% (%date%) \'%title%\' <i>%journal%\</i>,<b>%volume%</b> %issue%%pages%PMID:<a href="%data%"target="_blank"> %PMID% </a></br></br>' //Formats output
@@ -313,7 +325,7 @@ var pubmedSummaryAPI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.f
 var database = "db=pubmed";
 var returnmode = "&retmode=json";
 var returnmax = "&retmax=100";//maximum number of references returned
-var searchterm = "&term=Katherine Antel[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
+var searchterm = "&term=Emily Sumpena[Author])";//Search terms (see PubMed search terms https://www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.Search_Field_Descriptions_and for info)
 var returntype = "&rettype=abstract";
 var idURL = pubmedSearchAPI + database + returnmode + returnmax + searchterm
 console.log(idURL);
@@ -342,7 +354,7 @@ getPubmed(idURL).then(function(data) {
     getPubmed(summaryURL).then(function(summary) {
         publications = formatReferences(summary);
         console.log(publications);	
-		document.getElementById("demo").innerHTML = publications;
+		document.getElementById("demo").innerHTML = manualAbstracts + publications;
 		
     }, function(status) {
         publications = 'Something went wrong getting the ids.';
